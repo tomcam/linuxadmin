@@ -251,7 +251,8 @@ as `/dev/sda2`, and so on.
 
 ## Command shell
 
-### Multiple command shells(#shells)
+<a id="shells"></a>
+### Multiple command shells
 
 The key sequence `Alt+Right` (`⌘+Right` on MacOS) switches you to the next terminal, 
 and of course `Alt+Left`/`⌘+Left` to the previous session.
