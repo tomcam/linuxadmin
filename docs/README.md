@@ -4,6 +4,9 @@ This is just meant for me because I don't know where to find a summary like this
 anywhere else. If you know a better cheatsheet or have some suggestions, feel 
 free to contact me at tomcampbell@gmail.com.
 
+### CentOS
+[Multiple command shells](#shells)
+
 ## Maintenance on CentOS
 
 ### View installed packages with yum list
@@ -224,9 +227,6 @@ Press any key to continue and you'll see that `top` now sorts by memory usage:
 11911 postgres  15   0 8430m 307m 300m S    0  1.0   0:28.32 postgres        
 ```
 
-
-
-
 ## Disk layout
 
 ### Individual drives and virtual drives
@@ -251,7 +251,7 @@ as `/dev/sda2`, and so on.
 
 ## Command shell
 
-### Multiple command shells
+### Multiple command shells(#shells)
 
 The key sequence `Alt+Right` (`⌘+Right` on MacOS) switches you to the next terminal, 
 and of course `Alt+Left`/`⌘+Left` to the previous session.
