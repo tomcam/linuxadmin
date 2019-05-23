@@ -44,22 +44,39 @@ sudo yum list nvim
 ### Daily/every few days maintenance on CentOS: yum update
 
 Every day or three use `sudo yum update` to see what
-updates are necessary.
+updates are necessary. `update` leaves older versions
+of the packages on your system.
 
 ```
 # See what updates are available.
 sudo yum check-update
-# Install patches and updates
+# Update all changed packages by
+# installing patches and updates.
 sudo yum update
 ```
 
-### Higher impact maintenance on CentOS: yum upgrade
+### Like update but deleting old packages on CentOS: yum upgrade
 
-When you can afford a little more downtime run `yum upgrade`:
+`update` ensures you have current versions of packages on your system.
+It leaves the old ones intact. If you want the same updates but 
+prefer to delete the obsolete packages, use `yum upgrade`:
 
 ```
-# Install upgrades
-sudo yum upgrades
+# Update all changed packages by
+# installing patches and updates.
+# Delete outdated versions.
+sudo yum upgrade
+```
+
+This is functionally equivalent to running `update --obsoletes`:
+```
+# The following two commands do the same thing.
+# Update all changed packages by
+# installing patches and updates.
+# Delete outdated versions.
+sudo yum upgrade
+# --obsoletes means delete unneeded packages
+sudo yum update --obsoletes
 ```
 
 ## Diagnostics and performance
