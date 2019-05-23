@@ -19,6 +19,24 @@ It will probably be a long list.
 sudo yum list
 ```
 
+You will probably have hundreds or thousands of packages installed.
+The first few lines of the output will look something like this:
+
+```
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Installed Packages
+GeoIP.x86_64                   1.5.0-11.amzn2.0.2    installed 
+PyYAML.x86_64                  3.10-11.amzn2.0.2     installed 
+acl.x86_64                     2.2.51-14.amzn2       installed 
+acpid.x86_64                   2.0.19-9.amzn2.0.1    installed 
+amazon-linux-extras.noarch     1.6.7-1.amzn2         installed 
+amazon-ssm-agent.x86_64        2.3.372.0-1.amzn2     installed 
+at.x86_64                      3.1.13-23.amzn2       installed 
+attr.x86_64                    2.4.46-12.amzn2.0.2   installed 
+...etc
+```
+
+
 ### Search for a particular package with yum list installed and grep
 
 Suppose you want to know if `nvim` is installed.
@@ -26,8 +44,8 @@ You can use grep:
 
 ```
 # Get a list of installed packages, pipe it
-# through grep, and see if `nvim` is installed.
-sudo yum list installed | grep nvim
+# through grep, and see if `nano` is installed.
+sudo yum list installed | grep nano
 ```
 
 ### Determine if a yum package exists with yum list
@@ -37,9 +55,18 @@ available at all. Just append it to `yum list`:
 
 ```
 # Find out if there's a yum package for
-# the nvim editor.
-sudo yum list nvim
+# the  editor.
+sudo yum list nano
 ```
+
+If it's available, you'll see something like this:
+
+```
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Installed Packages
+nano.x86_64      2.9.8-2.amzn2.0.1    installed
+```
+
 
 ### Daily/every few days maintenance on CentOS: yum update
 
