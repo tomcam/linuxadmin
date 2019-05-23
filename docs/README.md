@@ -67,12 +67,14 @@ Installed Packages
 nano.x86_64      2.9.8-2.amzn2.0.1    installed
 ```
 
-
+<a id="update"></a>
 ### Daily/every few days maintenance on CentOS: yum update
 
 Every day or three use `sudo yum update` to see what
-updates are necessary. `update` leaves older versions
-of the packages on your system.
+updates are necessary. 
+Depending on what version of Linux you use,
+`update` leaves older versions
+of the packages on your system. See note below.
 
 ```
 # See what updates are available.
@@ -82,6 +84,32 @@ sudo yum check-update
 sudo yum update
 ```
 
+### Note: yum update may also delete obsolete packages
+
+Since most admins prefer to delete unneeded packages after
+running `yum update`, many versions of Linux now
+default to doing so. 
+Examples include Amazon Linux 2, Fedora, RHEL, and CentOS.
+
+You can tell what behavior your version has by examining
+the file `/etc/yum.conf`. If it contains the line `obsoletes=1`
+then `yum update` also deletes the outdated packages:
+
+
+```bash
+grep "obsoletes" /etc/yum.conf
+```
+
+If you see `obsoletes=1` then it means running `yum update`
+is actually the same as running `yum update --obsoletes`,
+which removes the old files.
+
+```
+obsoletes=1
+```
+
+
+<a id="upgrade"></a>
 ### Like update but deleting old packages on CentOS: yum upgrade
 
 `update` ensures you have current versions of packages on your system.
