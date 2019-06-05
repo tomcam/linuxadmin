@@ -1,0 +1,21 @@
+{
+  "name": "linuxadmin",
+  "version": "1.0.0",
+  "description": "Linux Admin Cheatsheet",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomcam/linuxadmin.git"
+  },
+  "author": "Tom Campbell <tomcampbell@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {                                                                  
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "homepage": "https://github.com/tomcam/linuxadmin#readme",
+  "dependencies": {
+    "vuepress": "^0.14.0"
+  }
+}
