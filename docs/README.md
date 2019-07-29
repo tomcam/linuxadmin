@@ -4,10 +4,38 @@ This is just meant for me because I don't know where to find a summary like this
 anywhere else. If you know a better cheatsheet or have some suggestions, feel 
 free to contact me at tomcampbell@gmail.com.
 
-### CentOS
+yumupdate
+yumupgrade
+
+| Maintenance on CentOS| 
+| --- |
+| [yum update](#yumupdate) |
+| [yum upgrade](#yumupgrade) |
+| [yum list](#yumlist) |
+| Diagnostics and performance| 
+| --- |
+| [View memory usage and performance with top](#top) |
+| Disk layout| 
+| --- |
+| [Subdirectories](#subdir) |
+| [Disk drives](#drives) |
+| [Partitions](#partitions) |
+| [MacOS/OSX disk layout](#macosdisklayout) |
+| Permissions| 
+| --- |
+| [sudo and su](#sudo-and-su) |
+| [Command shell](#shell) |
+| [Multiple command shells/terminal instances](#multiple-shell) |
+| [MacOS/OSX disk layout](#macosdisklayout) |
+
+
+<a id="xxx"></a>
+
+## Maintenance
+
+### Maintenance on CentOS
 [Multiple command shells](#shells)
 
-## Maintenance on CentOS
 
 ### View installed packages with yum list
 
@@ -36,7 +64,7 @@ attr.x86_64                    2.4.46-12.amzn2.0.2   installed
 ...etc
 ```
 
-
+<a id="yumlist"></a>
 ### Search for a particular package with yum list installed and grep
 
 Suppose you want to know if `nvim` is installed.
@@ -67,7 +95,7 @@ Installed Packages
 nano.x86_64      2.9.8-2.amzn2.0.1    installed
 ```
 
-<a id="update"></a>
+<a id="yumupdate"></a>
 ### Daily/every few days maintenance on CentOS: yum update
 
 Every day or three use `sudo yum update` to see what
@@ -109,7 +137,7 @@ obsoletes=1
 ```
 
 
-<a id="upgrade"></a>
+<a id="yumupgrade"></a>
 ### Like update but deleting old packages on CentOS: yum upgrade
 
 `update` ensures you have current versions of packages on your system.
@@ -133,9 +161,10 @@ sudo yum upgrade
 # --obsoletes means delete unneeded packages
 sudo yum update --obsoletes
 ```
-
+<a id="diag"></a>
 ## Diagnostics and performance
 
+<a id="top"></a>
 ### View memory usage and performance with top
 
 You can get a live view of memory consumption, processor usages, running processes,
@@ -299,32 +328,84 @@ Press any key to continue and you'll see that `top` now sorts by memory usage:
 11911 postgres  15   0 8430m 307m 300m S    0  1.0   0:28.32 postgres        
 ```
 
+<a id="disklayout"></a>
 ## Disk layout
 
 ### Individual drives and virtual drives
 
 Linux is installed in a directory tree with `/` (forward slash, not backslash as in Windows.
 
+<a id="subdir"></a>
 **Subdirectories** are given names like `/dev` and `/usr`. 
 
+<a id="drives"></a>
 **Disk drives** are given designations starting with `sd` followed by a letter. They liv in the `/dev` directory.
 The first drive name defaults to `sda`, the next drive is named `sdb`, and so on. So you'd address them
 as `/dev/sda`, `/dev/sdb`, etc.
 
+<a id="partitions"></a>
 **Disk partitions** are given numbers appended to the drive designation, 
 so partition 1 on drive `/dev/sda` is addressed as `/dev/sda1`, partition 2 is addressed
 as `/dev/sda2`, and so on.
 
+<a id="macosdisklayout"></a>
+### Learning disk layout on MacOS/OSX
+
+To learn what kinds of disk devices are attached to a Mac, use `diskutil list`
+
+```bash
+diskutil list
+```
+
+An abbreviated result looks like this:
+
+```
+/dev/disk0 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *1.0 TB     disk0
+   1:                        EFI EFI                     209.7 MB   disk0s1
+   2:                 Apple_APFS Container disk2         1000.0 GB  disk0s2
+
+/dev/disk1 (internal):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                         28.0 GB    disk1
+   1:                        EFI EFI                     314.6 MB   disk1s1
+   2:                 Apple_APFS Container disk2         27.7 GB    disk1s2
+
+/dev/disk2 (synthesized):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      APFS Container Scheme -                      +1.0 TB     disk2
+                                 Physical Stores disk1s2, disk0s2
+   1:                APFS Volume Macintosh HD            763.0 GB   disk2s1
+   2:                APFS Volume Preboot                 45.6 MB    disk2s2
+   3:                APFS Volume Recovery                509.8 MB   disk2s3
+   4:                APFS Volume VM                      2.1 GB     disk2s4
+
+/dev/disk3 (external, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *249.5 GB   disk3
+   1:               Windows_NTFS SANFLASH1               249.5 GB   disk3s1
+
+/dev/disk4 (external, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:     FDisk_partition_scheme                        *1.0 TB     disk4
+   1:               Windows_NTFS ssd1                    1.0 TB     disk4s1
+
+```
+
+<a id="permissions"></a>
 ## Permissions
 
+<a id="sudo-and-su"></a>
 ### sudo and su
 
 `sudo -s` (followed by a password) keeps you logged in as sudo.
 
+<a id="shell"></a>
 ## Command shell
 
-<a id="shells"></a>
-### Multiple command shells
+<a id="multiple-shell"></a>
+### Multiple command shells/terminal instances
 
 The key sequence `Alt+Right` (`⌘+Right` on MacOS) switches you to the next terminal, 
 and of course `Alt+Left`/`⌘+Left` to the previous session.
