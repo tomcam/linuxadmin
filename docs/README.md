@@ -8,6 +8,7 @@ yumupdate
 yumupgrade
 
 | **Maintenance on CentOS** | 
+| --- |
 | [yum update](#yumupdate) |
 | [yum upgrade](#yumupgrade) |
 | [yum list](#yumlist) |
