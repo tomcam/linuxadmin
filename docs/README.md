@@ -4,10 +4,7 @@ This is just meant for me because I don't know where to find a summary like this
 anywhere else. If you know a better cheatsheet or have some suggestions, feel 
 free to contact me at tomcampbell@gmail.com.
 
-yumupdate
-yumupgrade
-
-| **Maintenance on CentOS** | 
+|  | 
 | --- |
 | [yum update](#yumupdate) |
 | [yum upgrade](#yumupgrade) |
@@ -24,6 +21,8 @@ yumupgrade
 | [Command shell](#shell) |
 | [Multiple command shells/terminal instances](#multiple-shell) |
 | [MacOS/OSX disk layout](#macosdisklayout) |
+| **Logs**| 
+| [Log files in MacOS/OSX](#macos-log-files) |
 
 
 <a id="xxx"></a>
@@ -406,3 +405,17 @@ An abbreviated result looks like this:
 
 The key sequence `Alt+Right` (`⌘+Right` on MacOS) switches you to the next terminal, 
 and of course `Alt+Left`/`⌘+Left` to the previous session.
+
+## Logs
+
+<a id="macos-log-files"></a>
+### Log files in MacOS/OSX
+
+`/var/log`
+
+
+### Reference
+[Apple Tips: OSX  Log  Files](https://www.baligu.com/pondini/OSX/Logs.html)
+
+
+
