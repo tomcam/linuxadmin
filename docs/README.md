@@ -7,22 +7,18 @@ free to contact me at tomcampbell@gmail.com.
 yumupdate
 yumupgrade
 
-| Maintenance on CentOS| 
-| --- |
+| **Maintenance on CentOS** | 
 | [yum update](#yumupdate) |
 | [yum upgrade](#yumupgrade) |
 | [yum list](#yumlist) |
-| Diagnostics and performance| 
-| --- |
+| **Diagnostics and performance**| 
 | [View memory usage and performance with top](#top) |
-| Disk layout| 
-| --- |
+| **Disk layout**| 
 | [Subdirectories](#subdir) |
 | [Disk drives](#drives) |
 | [Partitions](#partitions) |
 | [MacOS/OSX disk layout](#macosdisklayout) |
-| Permissions| 
-| --- |
+| **Permissions**| 
 | [sudo and su](#sudo-and-su) |
 | [Command shell](#shell) |
 | [Multiple command shells/terminal instances](#multiple-shell) |
